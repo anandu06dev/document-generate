@@ -75,10 +75,10 @@ const doc = new jsPDF();
     const doc = new jsPDF();
 
     // Add logo
-    // const logo = new Image();
-    // logo.src = '../../../../assets/img/logo-company-1.jpg'; // Replace with your logo path
-    // logo.onload = () => {
-    //   doc.addImage(logo, 'jpg', 10, 10, 50, 20); // Adjust position and size
+    const logo = new Image();
+    logo.src = '../../../../assets/img/logo-company-1.jpg'; // Replace with your logo path
+    logo.onload = () => {
+      doc.addImage(logo, 'jpg', 10, 10, 50, 20); // Adjust position and size
 
       // Add letter content
       doc.setFontSize(12);
@@ -103,15 +103,15 @@ const doc = new jsPDF();
       doc.text('Your Position', 10, 140);
       
       // Add signature
-      // const signature = new Image();
-      // signature.src = '../../../../assets/img/signature.png'; // Replace with your signature path
-      // signature.onload = () => {
-      //   doc.addImage(signature, 'PNG', 10, 150, 50, 20); // Adjust position and size
-      //   doc.text('Signature', 10, 170);
-      //   
-      // };
-    // };
-    doc.save('Bonus_Letter'+ `${employeeName}`+'.pdf');
+      const signature = new Image();
+      signature.src = '../../../../assets/img/signature.png'; // Replace with your signature path
+      signature.onload = () => {
+        doc.addImage(signature, 'PNG', 10, 150, 50, 20); // Adjust position and size
+        doc.text('Signature', 10, 170);
+         doc.save('Bonus_Letter'+ `${employeeName}`+'.pdf');
+      };
+    };
+   
   }
 
   generateMSILetter(employeeName: string, position: string, department: string, date: string, revisedSalary: number, incrementPercentage: number) {
@@ -119,7 +119,7 @@ const doc = new jsPDF();
 
     // Add logo
     const logo = new Image();
-    logo.src = './assets/img/logo.png'; // Path to your logo
+    logo.src = '../../../../assets/img/logo-company-1.jpg'; // Path to your logo
     logo.onload = () => {
       doc.addImage(logo, 'PNG', 10, 10, 50, 20); // Adjust the size and position as needed
 
@@ -140,17 +140,17 @@ const doc = new jsPDF();
       doc.text('We appreciate your contributions and look forward to your continued success.', 10, 115);
       doc.text('Best regards,', 10, 130);
       
-    //   // Add signature
-    //   const signature = new Image();
-    //   signature.src = '../../../../assets/img/signature.png';// Path to your signature
-    //   signature.onload = () => {
-    //     doc.addImage(signature, 'PNG', 10, 135, 50, 20); // Adjust the size and position as needed
-    //     doc.text('Your Company Name', 10, 160);
+      // Add signature
+      const signature = new Image();
+      signature.src = '../../../../assets/img/signature.png';// Path to your signature
+      signature.onload = () => {
+        doc.addImage(signature, 'PNG', 10, 135, 50, 20); // Adjust the size and position as needed
+        doc.text('Your Company Name', 10, 160);
         
-    //     // Save the PDF
-       
-    //   };
-    doc.save('MSI_Letter'+ `${employeeName}`+'.pdf');
+        // Save the PDF
+        doc.save('MSI_Letter'+ `${employeeName}`+'.pdf');
+      };
+   
   };
   
   
