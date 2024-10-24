@@ -1,0 +1,17 @@
+
+<div class=""> <!-- Adjusted column sizes -->
+  <div class="card">
+    <div class="card-header mx-4 p-3 text-center">
+      <!-- <div class="icon icon-shape icon-lg bg-gradient-dark shadow text-center border-radius-lg"> -->
+        <mat-icon class="opacity-10">{{ card.icon }}</mat-icon> <!-- Changed to mat-icon -->
+      <!-- </div> -->
+    </div>
+    <div class="card-body pt-0 p-3 text-center">
+      <h6 class="text-center mb-0">{{ card.title }}</h6>
+      <span class="text-xs">{{ card.subtitle }}</span>
+      <hr class="horizontal dark my-3">
+      <h5 class="mb-0">{{ card.amount }}</h5>
+      <input type="checkbox" [(ngModel)]="card.selected" (change)="onSelect()" />
+    </div>
+  </div>
+</div>

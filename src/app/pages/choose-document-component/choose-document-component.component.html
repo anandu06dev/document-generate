@@ -1,0 +1,29 @@
+<div class="row">
+  
+    <app-card *ngFor="let card of cards" [card]="card" (selectionChange)="onSelectionChange($event)"></app-card>
+  </div>
+  
+  <!-- <button (click)="printSelected()">Print Selected Cards</button> -->
+  <!-- {{selectedCards | json}} -->
+
+
+  <div *ngIf="selectedCards.length > 0" class="selected-users">
+    <h6>Selected Documents:</h6>
+    <ul>
+      <li *ngFor="let doc of selectedCards">{{ doc.title }}</li>
+    </ul>
+
+    <!-- <button mat-button  routerLink="/generate-document">Generate Document</button>
+      -->
+      <button mat-button 
+      routerLink="/generate-document" 
+      class="animated-button">
+<mat-icon class="button-icon">description</mat-icon>
+Generate Document
+</button>
+  </div>
+
+  <div *ngIf="selectedCards.length == 0" class="selected-users">
+    <h6>*Please Select an documents to proceed...</h6>
+    
+  </div>
